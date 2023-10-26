@@ -16,4 +16,4 @@ jobs:
             fetch-depth: 0
       - run: |
           echo The PR was merged
-          git diff --name-only ${{github.base_ref}}...${{github.sha}}
+          git diff --name-only ${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }}
